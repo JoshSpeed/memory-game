@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
 
 import NewGame from './components/NewGame/NewGame'
+import Board from './components/Board/Board'
 import './App.css'
 
 export const AppContext = createContext()
@@ -14,7 +15,7 @@ function App() {
       <AppContext.Provider
         value={{ difficulty, setDifficulty, setGameStarted }}
       >
-        {!gameStarted && <NewGame />}
+        {!gameStarted ? <NewGame /> : <Board difficulty={difficulty} />}
       </AppContext.Provider>
     </div>
   )
