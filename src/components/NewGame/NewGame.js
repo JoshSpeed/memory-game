@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+
+import { AppContext } from '../../App'
 
 import RadioButton from './RadioButton'
 
+import './NewGame.css'
+
 function NewGame() {
-  const [difficulty, setDifficulty] = useState('')
+  const { difficulty, setDifficulty, setGameStarted } = useContext(AppContext)
 
   const handleEasyChange = () => {
     setDifficulty('easy')
@@ -15,8 +19,14 @@ function NewGame() {
     setDifficulty('hard')
   }
 
+  const handleForm = (e) => {
+    e.preventDefault()
+    console.log(difficulty)
+    setGameStarted(true)
+  }
+
   return (
-    <div>
+    <div className='formBar'>
       <form>
         <RadioButton
           label='Easy'
@@ -34,7 +44,9 @@ function NewGame() {
           onChange={handleHardChange}
         />
 
-        <button>Start Game</button>
+        <button type='submit' onClick={handleForm}>
+          Start Game
+        </button>
       </form>
     </div>
   )

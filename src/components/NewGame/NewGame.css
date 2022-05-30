@@ -1,0 +1,28 @@
+.formBar {
+  padding: 10px;
+  width: 40%;
+  height: 60px;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px rgb(209, 209, 209);
+  background-color: white;
+}
+
+.formBar form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.formBar button {
+  background-color: rgb(42, 42, 145);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: ghostwhite;
+}
