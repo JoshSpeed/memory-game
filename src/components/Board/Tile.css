@@ -7,4 +7,12 @@
   justify-content: center;
   border-radius: 50px;
   margin: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgb(18, 18, 126);
+}
+
+.tile:hover {
+  cursor: pointer;
 }

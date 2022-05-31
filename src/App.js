@@ -8,14 +8,27 @@ export const AppContext = createContext()
 
 function App() {
   const [difficulty, setDifficulty] = useState('')
+  const [layout, setLayout] = useState([])
   const [gameStarted, setGameStarted] = useState(false)
+  const [currentGuess, setCurrentGuess] = useState('')
 
   return (
     <div className='app'>
       <AppContext.Provider
-        value={{ difficulty, setDifficulty, setGameStarted }}
+        value={{
+          difficulty,
+          setDifficulty,
+          setGameStarted,
+          currentGuess,
+          setCurrentGuess,
+          setLayout
+        }}
       >
-        {!gameStarted ? <NewGame /> : <Board difficulty={difficulty} />}
+        {!gameStarted ? (
+          <NewGame />
+        ) : (
+          <Board difficulty={difficulty} layout={layout} />
+        )}
       </AppContext.Provider>
     </div>
   )
