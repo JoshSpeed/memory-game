@@ -11,6 +11,7 @@ function App() {
   const [layout, setLayout] = useState([])
   const [gameStarted, setGameStarted] = useState(false)
   const [currentGuess, setCurrentGuess] = useState('')
+  const [hidden, setHidden] = useState(false)
 
   return (
     <div className='app'>
@@ -21,7 +22,9 @@ function App() {
           setGameStarted,
           currentGuess,
           setCurrentGuess,
-          setLayout
+          setLayout,
+          hidden,
+          setHidden
         }}
       >
         {!gameStarted ? (

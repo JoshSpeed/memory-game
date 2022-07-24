@@ -11,8 +11,13 @@
   font-size: 25px;
   font-weight: 700;
   color: rgb(18, 18, 126);
+  user-select: none;
 }
 
 .tile:hover {
   cursor: pointer;
+}
+
+.hidden {
+  background-color: rgb(18, 18, 126);
 }

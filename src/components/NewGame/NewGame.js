@@ -7,9 +7,13 @@ import RadioButton from './RadioButton'
 import './NewGame.css'
 
 function NewGame() {
-  const { difficulty, setDifficulty, setGameStarted, setLayout } = useContext(
-    AppContext
-  )
+  const {
+    difficulty,
+    setDifficulty,
+    setGameStarted,
+    setLayout,
+    setHidden
+  } = useContext(AppContext)
 
   const handleEasyChange = () => {
     setDifficulty('easy')
@@ -38,6 +42,11 @@ function NewGame() {
     const shuffled = answers.sort(() => Math.random() - 0.5)
     setLayout(shuffled)
     setGameStarted(true)
+
+    // After game start - hide tiles after set time
+    setTimeout(() => {
+      setHidden(true)
+    }, 5000)
   }
 
   return (
